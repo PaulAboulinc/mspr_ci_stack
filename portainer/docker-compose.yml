@@ -1,0 +1,18 @@
+version: '3'
+services:
+  portainer:
+    container_name: portainer
+    image: 'portainer/portainer-ce'
+    expose:
+      - 80
+    restart: always
+    environment:
+      VIRTUAL_PORT: 9000
+      VIRTUAL_HOST: portainer.nonstopintegration.ml
+      LETSENCRYPT_HOST: portainer.nonstopintegration.ml
+      LETSENCRYPT_EMAIL: nonstopintegration@gmail.com
+
+networks:
+  default:
+    external:
+      name: webproxy

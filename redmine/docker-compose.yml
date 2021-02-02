@@ -1,0 +1,18 @@
+version: '3'
+services:
+  redmine:
+    container_name: redmine
+    image: 'redmine:latest'
+    expose:
+      - 80
+    restart: always
+    environment:
+      VIRTUAL_PORT: 3000
+      VIRTUAL_HOST: redmine.nonstopintegration.ml
+      LETSENCRYPT_HOST: redmine.nonstopintegration.ml
+      LETSENCRYPT_EMAIL: nonstopintegration@gmail.com
+
+networks:
+  default:
+    external:
+      name: webproxy
