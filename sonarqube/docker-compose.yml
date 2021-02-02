@@ -7,7 +7,6 @@ services:
       - 80
     restart: always
     environment:
-      PORT: 9000
       VIRTUAL_PORT: 9000
       VIRTUAL_HOST: sonarqube.nonstopintegration.ml
       LETSENCRYPT_HOST: sonarqube.nonstopintegration.ml
