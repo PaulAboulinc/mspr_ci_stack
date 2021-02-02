@@ -1,0 +1,19 @@
+version: '3'
+services:
+  sonarqube:
+    container_name: sonarqube
+    image: 'sonarqube:lts'
+    expose:
+      - 80
+    restart: always
+    environment:
+      PORT: 9000
+      VIRTUAL_PORT: 9000
+      VIRTUAL_HOST: sonarqube.nonstopintegration.ml
+      LETSENCRYPT_HOST: sonarqube.nonstopintegration.ml
+      LETSENCRYPT_EMAIL: nonstopintegration@gmail.com
+
+networks:
+  default:
+    external:
+      name: webproxy
