@@ -28,6 +28,8 @@ sudo service docker start
 ### Web Proxy utilisant Docker, NGINX et Let's Encrypt :
 L’installation de Nginx sera faite à l’aide d’un outil permettant de simplifier la création et la mise en ligne de plusieurs containers docker à l’aide d’un seul proxy Nginx. Cet outil permettra également de mettre à jour automatiquement les certificats SSL avec Let’s Encrypt.
 
+![Web Proxy environment](https://github.com/evertramos/images/raw/master/webproxy.jpg)
+
 #### L’installation de déroule de la façon suivante :
 
 Récupération du code source : 
