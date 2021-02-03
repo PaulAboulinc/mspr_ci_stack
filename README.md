@@ -57,6 +57,48 @@ Exécution du script :
 
 ### Portainer :
 
+#### Portainer Agent
+API permettant à portainer d'analyser l'environnement docker présent sur le serveur (Containers, volumes, networks...)
+> **Installation :**
+> ```shell
+> docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent
+> ``` 
+
+#### Portainer CE
+Interface graphique pour exploiter les informations mise à dispositon par l'API portainer agent mais aussi d'effectuer des actions sur l'environnement docker en place.
+
+> **Installation :**
+> * L'installation se fait à l'aide du ficher `docker-compose.yml` suivant
+> ```yml
+>  version: '3'
+>  services:
+>  portainer:
+>  container_name: portainer
+>  image: 'portainer/portainer-ce'
+>  expose:
+>    - 80
+>  restart: always
+>  environment:
+>    VIRTUAL_PORT: 9000
+>    VIRTUAL_HOST: portainer.nonstopintegration.ml
+>    LETSENCRYPT_HOST: portainer.nonstopintegration.ml
+>    LETSENCRYPT_EMAIL: nonstopintegration@gmail.com
+>  networks:
+>  default:
+>    external:
+>     name: webproxy
+> ```
+>  * Pour construire et lancer le "container" executer la commande :
+>  ```shell
+>  docker-compose up --build -d
+>  ```
+
+> **Configuration :**
+>  * Connecter Portainer à l'environnement docker qui doit être gérer
+>  * Choisir Agent comme mode de connexion puis :
+>    * Donner un **Nom** à l'environnement
+>    * Renseigner dans **Agent URL**, l'adresse IP public du serveur ainsi que le port du Portainer Agent (ex : 0.0.0.0:9001)
+
 ### Jenkins :
 
 ### Sonarqube :
