@@ -105,8 +105,74 @@ Interface graphique pour exploiter les informations mise à dispositon par l'API
 > Voici un exemple :   
 > ![](https://nsa40.casimages.com/img/2021/02/03/210203105543683341.png)
 
-### Jenkins :
-
 ### Sonarqube :
+Sonarqube nous permettra d'analyser et de mesurer la qualité du code, les potentiels faille de sécurité ainsi que les informations relatives aux tests unitaires.
+> **Installation :**
+> * L'installation se fait à l'aide du ficher `docker-compose.yml` suivant
+>  ```yml
+> version: '3'
+> services:
+>   sonarqube:
+>     container_name: sonarqube
+>     image: 'sonarqube:lts'
+>     expose:
+>       - 80
+>     restart: always
+>     environment:
+>       VIRTUAL_PORT: 9000
+>       VIRTUAL_HOST: sonarqube.nonstopintegration.ml
+>       LETSENCRYPT_HOST: sonarqube.nonstopintegration.ml
+>       LETSENCRYPT_EMAIL: nonstopintegration@gmail.com
+> 
+> networks:
+>   default:
+>     external:
+>       name: webproxy
+> ```
+>  * Pour construire et lancer le "container" executer la commande :
+>  ```shell
+>  docker-compose up --build -d
+>  ```
 
 ### Redmine :
+
+Redmine nous permettra de créer des tickets pour chaque tâche à réaliser. À l'aide de ces tickets, nous pourrons plus facilement nous répartir les tâches, suivre l'avancement de celles-ci ainsi que garder un suivi sur l'historique de réalisation de celles-ci.
+
+> **Installation :**
+> * L'installation se fait à l'aide du ficher `docker-compose.yml` suivant
+>  ```yml
+> version: '3'
+> services:
+>   redmine:
+>     container_name: redmine
+>     image: 'redmine:latest'
+>     expose:
+>       - 80
+>     restart: always
+>     environment:
+>       VIRTUAL_PORT: 3000
+>       VIRTUAL_HOST: redmine.nonstopintegration.ml
+>       LETSENCRYPT_HOST: redmine.nonstopintegration.ml
+>       LETSENCRYPT_EMAIL: nonstopintegration@gmail.com
+> 
+> networks:
+>   default:
+>     external:
+>       name: webproxy
+> ```
+>  * Pour construire et lancer le "container" executer la commande :
+>  ```shell
+>  docker-compose up --build -d
+>  ```
+
+### Jenkins :
+
+
+# Autre :
+
+## Sonarqube
+
+> **Configuration :**
+> * Cliquer sur le "+" en haut a droite puis sur "Créer un nouveau projet"
+>  * Renseigner les champs `Clé du projet` et `Nom d'affichage`
+>  * Il faut ensuite générer un token en suivant la procédure et utilisé la commande générée
