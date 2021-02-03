@@ -61,7 +61,10 @@ Exécution du script :
 API permettant à portainer d'analyser l'environnement docker présent sur le serveur (Containers, volumes, networks...)
 > **Installation :**
 > ```shell
-> docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent
+> docker run -d -p 9001:9001 --name portainer_agent --restart=always \
+>            -v /var/run/docker.sock:/var/run/docker.sock \
+>            -v /var/lib/docker/volumes:/var/lib/docker/volumes \
+>            portainer/agent
 > ``` 
 
 #### Portainer CE
