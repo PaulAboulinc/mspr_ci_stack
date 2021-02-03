@@ -102,7 +102,7 @@ Interface graphique pour exploiter les informations mise à dispositon par l'API
 >    * Donner un **Nom** à l'environnement
 >    * Renseigner dans **Agent URL**, l'adresse IP public du serveur ainsi que le port du Portainer Agent (ex : 0.0.0.0:9001)
 > 
-> Voici un exemple : 
+> Voici un exemple :   
 > ![](https://nsa40.casimages.com/img/2021/02/03/210203105543683341.png)
 
 ### Jenkins :
