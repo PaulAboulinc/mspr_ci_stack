@@ -24,7 +24,7 @@ sudo /sbin/reboot
 ```shell
 sudo service docker start
 ```
-### Nginx Reverse Proxy & Let's Encrypt Companion:
+### Nginx Reverse Proxy & Let's Encrypt Companion :
 
 ### Portainer :
 
