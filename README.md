@@ -1,6 +1,6 @@
-# MSPR - Mise en oeuvre d'une intégration et d'un déploiement continus
+# MSPR - Mise en oeuvre d'une intégration continue
 
-## Serveur d'intégration continue :
+## Configuration du serveur
 
 ### Pré-requis :
 * Serveur assez puissant (déterminer une configuration minimale)
@@ -8,9 +8,14 @@
 
 ### Docker :
 
-> Installation de docker
+> Installation de docker et docker-compose
+ 
+ ```sudo apt install docker-compose```
 
 > Installation de docker-compose
 
+### Portainer :
 
-### Jenkins
+### Jenkins :
+
+### Sonarqube :
