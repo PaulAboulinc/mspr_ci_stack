@@ -9,10 +9,7 @@
 ### Docker :
 
 > Installation de docker et docker-compose
- 
- ```sudo apt install docker-compose```
-
-> Installation de docker-compose
+> ```sudo apt install docker-compose```
 
 ### Portainer :
 
