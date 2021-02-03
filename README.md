@@ -46,7 +46,7 @@ Exécution du script :
  ./start.sh
 ```
 
-Le script “./start.sh” fait les actions suivantes : 
+#### Le script “./start.sh” fait les actions suivantes : 
 * Récupérer les variables dans le fichier `.env`
 * Création d'un network docker pour les reverse proxy nommé `webproxy`
 * Télécharge la dernière version du reverse proxy nginx pour les containers docker ([source](https://raw.githubusercontent.com/jwilder/nginx-proxy/master/nginx.tmpl))
