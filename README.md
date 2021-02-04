@@ -7,53 +7,80 @@
 * OS : Ubuntu 20.04 lts
 
 ### Docker & Docker Compose :
-
-* Installation de docker et docker-compose
-```shell
-sudo apt install docker-compose
-```
-* Ajouter son user au groupe docker
-```shell
-sudo usermod -aG docker $USER
-```
-* Redémarrer la session
-```shell 
-sudo /sbin/reboot
-```
-* Lancer le service Docker 
-```shell
-sudo service docker start
-```
+Docker nous permettra de conteneuriser nos applications et outils de façons simple et efficace, nous utiliserons également docker-compose pour dockeriser nos applications frontend et backend.
+> **Installation :**
+> * Installation de docker et docker-compose
+> ```shell
+> sudo apt install docker-compose
+> ```
+> * Ajouter son user au groupe docker
+> ```shell
+> sudo usermod -aG docker $USER
+> ```
+> * Redémarrer la session
+> ```shell 
+> sudo /sbin/reboot
+> ```
+> * Lancer le service Docker 
+> ```shell
+> sudo service docker start
+> ```
 
 ### Web Proxy utilisant Docker, NGINX et Let's Encrypt :
 L’installation de Nginx sera faite à l’aide d’un outil permettant de simplifier la création et la mise en ligne de plusieurs containers docker à l’aide d’un seul proxy Nginx. Cet outil permettra également de mettre à jour automatiquement les certificats SSL avec Let’s Encrypt.
 
-![Web Proxy environment](https://github.com/evertramos/images/raw/master/webproxy.jpg)
+> ![Web Proxy environment](https://github.com/evertramos/images/raw/master/webproxy.jpg)
 
-#### L’installation de déroule de la façon suivante :
-
-Récupération du code source : 
-```shell
-git clone git@github.com:PaulAboulinc/docker-compose-letsencrypt-nginx-proxy-companion.git
-```
-
-Création du fichier ".env” avec le fichier générique : 
-```shell
-cp .env.sample .env
-```
-Modification de la variable `IP` du fichier `.env` pour indiquer l’adresse IP de la machine : 
-
-Exécution du script :
-```shell
- ./start.sh
-```
-
-#### Le script “./start.sh” fait les actions suivantes : 
-* Récupérer les variables dans le fichier `.env`
-* Création d'un network docker pour les reverse proxy nommé `webproxy`
-* Télécharge la dernière version du reverse proxy nginx pour les containers docker ([source](https://raw.githubusercontent.com/jwilder/nginx-proxy/master/nginx.tmpl))
-* Fait un pull des images docker
-* Construction des dockers en utilisant docker-compose ([source](https://github.com/PaulAboulinc/docker-compose-letsencrypt-nginx-proxy-companion/blob/master/docker-compose.yml))
+> **Installation :**
+> 
+> Récupération du code source : 
+> ```shell
+> git clone git@github.com:PaulAboulinc/docker-compose-letsencrypt-nginx-proxy-companion.git
+> ```
+> 
+> Création du fichier ".env” avec le fichier générique : 
+> ```shell
+> cp .env.sample .env
+> ```
+> Modification de la variable `IP` du fichier `.env` pour indiquer l’adresse IP de la machine : 
+> 
+> Exécution du script :
+> ```shell
+> ./start.sh
+> ```
+> 
+>  **Le script “./start.sh” fait les actions suivantes :**
+> * Récupérer les variables dans le fichier `.env`
+> * Création d'un network docker pour les reverse proxy nommé `webproxy`
+> * Télécharge la dernière version du reverse proxy nginx pour les containers docker ([source](https://raw.githubusercontent.com/jwilder/nginx-proxy/master/nginx.tmpl))
+> * Fait un pull des images docker
+> * Construction des dockers en utilisant docker-compose ([source](https://github.com/PaulAboulinc/docker-compose-letsencrypt-nginx-proxy-companion/blob/master/docker-compose.yml))
+> 
+> **Exemple d'utilisation :**
+> * Créer un fichier "docker-compose.yml" sous le format suivant :
+> ```yml
+>  version: '3'
+>  services:
+>  <nom_service>: #Remplacer par le nom souhaité pour le service
+>  container_name: <nom_container> #Remplacer par le nom souhaité pour le container
+>  image: '<image_docker>' #Remplacer par l'image docker souhaité
+>  expose:
+>    - 80
+>  restart: always
+>  environment:
+>    VIRTUAL_PORT: <port_container> #Remplacer par le port de l'application dans le container 
+>    VIRTUAL_HOST: <host> #Remplacer par le/les nom de domaine souhaité
+>    LETSENCRYPT_HOST: <host> #Remplacer par le/les nom de domaine souhaité
+>    LETSENCRYPT_EMAIL: <email> #Remplacer par l'email utilisée par letsencrypt
+>  networks:
+>  default:
+>    external:
+>     name: webproxy
+> ```
+>  * Pour construire et lancer le "container" executer la commande :
+>  ```shell
+>  docker-compose up --build -d
+>  ```
 
 ### Portainer :
 
