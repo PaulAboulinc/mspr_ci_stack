@@ -30,7 +30,7 @@ Docker nous permettra de conteneuriser nos applications et outils de façons sim
 L’installation de Nginx sera faite à l’aide d’un outil permettant de simplifier la création et la mise en ligne de plusieurs containers docker à l’aide d’un seul proxy Nginx. Cet outil permettra également de mettre à jour automatiquement les certificats SSL avec Let’s Encrypt.
 
 > ![Web Proxy environment](https://github.com/evertramos/images/raw/master/webproxy.jpg)
->
+
 > **Installation :**
 > 
 > Récupération du code source : 
@@ -212,7 +212,7 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 > sudo apt install jenkins
 > ```
 > * Ajouter l'utilisateur `jenkins` au groupe `docker` pour utiliser docker avec jenkins
-> ``` shelll
+> ``` shell
 >  sudo usermod -aG docker jenkins
 > ```
 > * Démarrer le service `Jenkins` :
