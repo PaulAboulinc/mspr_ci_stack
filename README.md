@@ -166,6 +166,44 @@ Redmine nous permettra de créer des tickets pour chaque tâche à réaliser. À
 >  ```
 
 ### Jenkins :
+Jenkins est l'outil qui nous permettra de gérer notre intégration continue ainsi que les déploiements sur les différentes environnements du projet.
+
+> **Installation :**
+> * Java est pré-requis pour le bon fonctionnement de Jenkins :
+> ```shell
+> sudo apt install openjdk-8-jdk
+> ```
+> * Ajout de Jenkins au dépôt du serveur : 
+> ``` shell
+> wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+> sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+> sudo apt update
+> ```
+> * Installation de Jenkins :
+> ``` shell
+> sudo apt install jenkins
+> ```
+> * Ajouter l'utilisateur `jenkins` au groupe `docker` pour utiliser docker avec jenkins
+> ``` shelll
+>  sudo usermod -aG docker jenkins
+> ```
+> * Démarrer le service `Jenkins` :
+>  ``` shell
+>  sudo service jenkins start
+>  ```
+> Pour configurer votre installation, consultez Jenkins sur son port par défaut,  `8080`  en utilisant votre nom de domaine ou l'adresse IP de votre serveur :  `http://jenkins.nonstopintegration.ml:8080`
+> Vous devriez voir apparaître l'écran  **Unlock Jenkins**  qui affichera l'emplacement du mot de passe initial :
+>  ![](https://assets.digitalocean.com/articles/jenkins-install-ubuntu-1604/unlock-jenkins.png)
+>  Dans la fenêtre du terminal, utilisez la commande  `cat`  pour afficher le mot de passe :
+> 
+> ```bash
+> sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+> ```
+>
+> Copiez le mot de passe alphanumérique composé de 32 caractères du terminal et collez-le dans le champ  > **Administrator password**, puis cliquez sur  **Continue**.
+> Ensuite, sélectionné l'installation des plugins suggérés. Une fois cette installation terminée, vous pourrez créer votre utilisateur administrateur.
+>    
+> Jenkins est maintenant installé et configuré, il ne reste qu'à se connecter sur l'url suivante : `http://jenkins.nonstopintegration.ml:8080`
 
 
 # Autre :
