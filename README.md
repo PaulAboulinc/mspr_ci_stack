@@ -165,7 +165,9 @@ Redmine nous permettra de créer des tickets pour chaque tâche à réaliser. À
 >  docker-compose up --build -d
 >  ```
 
-### Jenkins :
+
+### Jenkins : ![](https://img.icons8.com/color/48/000000/jenkins.png)
+
 Jenkins est l'outil qui nous permettra de gérer notre intégration continue ainsi que les déploiements sur les différentes environnements du projet.
 
 > **Installation :**
