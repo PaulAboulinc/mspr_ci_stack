@@ -166,8 +166,7 @@ Redmine nous permettra de créer des tickets pour chaque tâche à réaliser. À
 >  ```
 
 
-### Jenkins : ![](https://img.icons8.com/color/48/000000/jenkins.png)
-
+### Jenkins :
 Jenkins est l'outil qui nous permettra de gérer notre intégration continue ainsi que les déploiements sur les différentes environnements du projet.
 
 > **Installation :**
@@ -193,6 +192,8 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 >  ``` shell
 >  sudo service jenkins start
 >  ```
+>  **Configuration :**
+> 
 > Pour configurer votre installation, consultez Jenkins sur son port par défaut,  `8080`  en utilisant votre nom de domaine ou l'adresse IP de votre serveur :  `http://jenkins.nonstopintegration.ml:8080`
 > Vous devriez voir apparaître l'écran  **Unlock Jenkins**  qui affichera l'emplacement du mot de passe initial :
 >  ![](https://assets.digitalocean.com/articles/jenkins-install-ubuntu-1604/unlock-jenkins.png)
@@ -205,14 +206,24 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 > Copiez le mot de passe alphanumérique composé de 32 caractères du terminal et collez-le dans le champ  > **Administrator password**, puis cliquez sur  **Continue**.
 > Ensuite, sélectionné l'installation des plugins suggérés. Une fois cette installation terminée, vous pourrez créer votre utilisateur administrateur.
 >    
+> * Configuration des plugins : 
+>   * "Dashboard > Administration Jenkins > Gestion des plugins > Onglet “Disponible”
+>   * Cocher les plugins suivants
+>     * Email Extension Template Plugin
+>     * JUnit Plugin
+>     * Docker Compose Build Step Plugin
+>     * Docker pipeline
+>     * Docker Commons Plugin
+>     * Docker API Plugin
+>   * Cliquez sur “installer sans redémarrer”
+>   
+>  * Configuraton du Github Hook :
+>    * Sur Jenkins
+>      * Aller sur "Dashboard > Administrer Jenkins > Configurer le système > Onglet Github"
+>      * Cliquez sur "Avancé..." et cochez l'option "Specify another hook URL for GitHub configuration"
+>      * Indiquez le lien : http://jenkins.nonstopintegration.ml:8080/github-webhook/
+>    * Sur Github :
+>      * Aller sur "Settings > Webhook > add webhook > cliquez sur add webhook"
+>      * Copier le lien "http://jenkins.nonstopintegration.ml:8080/github-webhook/" dans le champ "Payload URL"
+>      
 > Jenkins est maintenant installé et configuré, il ne reste qu'à se connecter sur l'url suivante : `http://jenkins.nonstopintegration.ml:8080`
-
-
-# Autre :
-
-## Sonarqube
-
-> **Configuration :**
-> * Cliquer sur le "+" en haut a droite puis sur "Créer un nouveau projet"
->  * Renseigner les champs `Clé du projet` et `Nom d'affichage`
->  * Il faut ensuite générer un token en suivant la procédure et utilisé la commande générée
