@@ -106,7 +106,7 @@ Interface graphique pour exploiter les informations mise à dispositon par l'API
 > ![](https://nsa40.casimages.com/img/2021/02/03/210203105543683341.png)
 
 ### Sonarqube :
-Sonarqube nous permettra d'analyser et de mesurer la qualité du code, les potentiels faille de sécurité ainsi que les informations relatives aux tests unitaires.
+Sonarqube nous permettra d'analyser et de mesurer la qualité du code, les potentiels failles de sécurité ainsi que les informations relatives aux tests unitaires.
 > **Installation :**
 > * L'installation se fait à l'aide du ficher `docker-compose.yml` suivant
 >  ```yml
