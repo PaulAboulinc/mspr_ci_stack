@@ -2,7 +2,7 @@
 
 ## Configuration du serveur
 
-### Sommaire
+### Sommaire :
 1. [Pré-requis](#pré-requis-)
 2. [Docker & Docker Compose](#docker--docker-compose-)
 3. [Web Proxy utilisant Docker, NGINX et Let's Encrypt](#web-proxy-utilisant-docker-nginx-et-lets-encrypt-)
