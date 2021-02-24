@@ -277,6 +277,38 @@ http://localhost:4200
 - sonar
 - e2e
 
+### Tests Unitaires
+
+
+
+### Outils de qualité du code
+
+Prettier
+
+Tslint
+
+Sonarqube 
+
+* Indiquer la conf pour expliquer comme la changer (pom.xml) => source a inclure ou exclure
+* Indiquer les règles importantes/bloquantes par défault et si il y en a, les customs
+
+
+### Intégration continue
+
+* Redmine : Expliquer comment utiliser jenkins (créer un compte, lancer le build, ...)
+
+* Expliquer la stratégie du build (décrire jenkinsfile)
+* Indiquer que c'est automatique (hook) + autres règles s'il y en a
+
+
+### Déploiement
+
+* à ajouter sur redmine de façon précise (ici on a déjà ce qu'il faut avec l'integration continue)
+
+
+
+
+
 ### hooks avec Husky
 
 > **NB :** Un hook est un script qui s’exécute automatiquement lorsqu’un événement particulier se produit dans un dépôt git.
