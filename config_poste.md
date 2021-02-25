@@ -46,26 +46,28 @@ Après cela et depuis la toolbox, télécharger l'IDE **IntelliJ**
 
 Docker nous permettra de conteneuriser nos applications et outils de façons simple et efficace, nous utiliserons également docker-compose pour dockeriser nos applications frontend et backend.
 
+> **Installation :**
+
 > * **Installation de docker et docker-compose**
->
+
 > ```shell
 > sudo apt install docker-compose
 > ```
->
+
 > * **Ajouter son user au groupe docker**
->
+
 > ```shell
 > sudo usermod -aG docker $USER
 > ```
->
+
 > * **Redémarrer la session**
->
+
 > ```shell 
 > sudo /sbin/reboot
 > ```
->
+
 > * **Lancer le service Docker** 
->
+
 > ```shell
 > sudo service docker start
 > ```
@@ -290,8 +292,42 @@ Sonarqube
 * Indiquer la conf pour expliquer comme la changer (pom.xml) => source a inclure ou exclure
 * Indiquer les règles importantes/bloquantes par défault et si il y en a, les customs
 
-
 ### Intégration continue
+
+#### Jenkins
+
+##### Première utilisation
+
+1. Demandez à un administrateur de vous créer un compte Jenkins
+2. Connectez vous à l'adresse suivante : http://jenkins.nonstopintegration.ml:8080/
+3. Renseigner les identifiants obtenu par votre administrateur précédemment
+4. Il est **recommandé** de modifier votre mot de passe lors de votre première connexion
+
+##### Guide d'utilisation 
+
+###### 	Dashboard
+
+Le Dashboard est la racine de notre jenkins, c'est ici que vous verrez les différent repository GitHub selon vos habilitation.
+
+sur cette page vous pouvez voir différentes indicateur sur le repository, le plus important est certainement le "temps", ce dernier indique l'état des dernière pipeline exécuté, 3 états sont possibles :
+
+- Ensoleillé
+- Nuageux
+- Pluvieux
+
+Vous pouvez cliquer sur l'un de ces repository pour accéder à la page suivante.
+
+
+
+###### 	Dashboard > nom_du_repo
+
+> **NB :** Nous utilisons une architecture multi branche, de ce fait, Jenkins récupère toutes les branché lié au repository GitHub lié  
+
+
+
+##### Stratégie d'intégration et de déploiement continue
+
+#### Redmine
 
 * Redmine : Expliquer comment utiliser jenkins (créer un compte, lancer le build, ...)
 
