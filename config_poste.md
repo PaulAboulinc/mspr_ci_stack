@@ -46,28 +46,26 @@ Après cela et depuis la toolbox, télécharger l'IDE **IntelliJ**
 
 Docker nous permettra de conteneuriser nos applications et outils de façons simple et efficace, nous utiliserons également docker-compose pour dockeriser nos applications frontend et backend.
 
-> **Installation :**
-
 > * **Installation de docker et docker-compose**
-
+>
 > ```shell
 > sudo apt install docker-compose
 > ```
-
+>
 > * **Ajouter son user au groupe docker**
-
+>
 > ```shell
 > sudo usermod -aG docker $USER
 > ```
-
+>
 > * **Redémarrer la session**
-
+>
 > ```shell 
 > sudo /sbin/reboot
 > ```
-
+>
 > * **Lancer le service Docker** 
-
+>
 > ```shell
 > sudo service docker start
 > ```
