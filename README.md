@@ -279,9 +279,9 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 >
 > * Démarrer le service `Jenkins` :
 >
->  ``` shell
+> ``` shell
 >  sudo service jenkins start
->  ```
+> ```
 >
 >  **Configuration :**
 >
@@ -328,3 +328,36 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 >      * Copier le lien "http://jenkins.nonstopintegration.ml:8080/github-webhook/" dans le champ "Payload URL"
 >
 > Jenkins est maintenant installé et configuré, il ne reste qu'à se connecter sur l'url suivante : `http://jenkins.nonstopintegration.ml:8080`
+>
+> #### Création et configuration Pipeline Multibranches
+>
+> > **NB** Veuillez vous assurer de bien avoir installer le plugin ''**GitHub Branch Source**'' avant de continuer.
+>
+> ##### Création
+>
+> Dashboard > Nouveau Item > Pipeline Multibranches
+>
+> Entrer un nom pour votre pipeline puis cliquez sur **OK**
+>
+> ##### Configuration
+>
+> - **Branch sources** : Choisir GitHub
+>   - Cocher "Repository HTTPS URL"
+> - **Behaviours** (Ajouter les "Behaviours suivant")
+>   - Discover branches
+>     - Strategy : All branches
+>   - Discover pull requests from origin
+>     - Strategy : The current pull request revision
+>   - Discover pull requests from forks
+>     - Strategy : The current pull request revision
+>     - Trust : From users with Admin or Write permission
+>   - Discover tags
+> - **Build Configuration**
+>   - Mode : by Jenkinsfile
+>   - Script Path : Jenkinsfile
+> - **Scan Repository Triggers**
+>   - Cocher : Periodically if not otherwise run
+>   - Interval : 5 minutes
+
+
+
