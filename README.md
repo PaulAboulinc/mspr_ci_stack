@@ -17,7 +17,6 @@
 
 ### Pré-requis :
 
-* Serveur assez puissant (déterminer une configuration minimale)
 * OS : Ubuntu 20.04 lts
 
 ### Docker & Docker Compose :
