@@ -1,4 +1,5 @@
 
+
 # MSPR - Mise en oeuvre d'une intégration continue
 
 ## Configuration du serveur
@@ -21,7 +22,7 @@
 
 ### Docker & Docker Compose :
 
-Docker nous permettra de conteneuriser nos applications et outils de façons simple et efficace, nous utiliserons également docker-compose pour dockeriser nos applications frontend et backend.
+Docker nous permettra de conteneuriser nos applications et outils de façon simple et efficace. Nous utiliserons également docker-compose pour dockeriser nos applications frontend et backend.
 
 > **Installation :**
 >
@@ -69,7 +70,7 @@ L’installation de Nginx sera faite à l’aide d’un outil permettant de simp
 > cp .env.sample .env
 > ```
 >
-> Modification de la variable `IP` du fichier `.env` pour indiquer l’adresse IP de la machine : 
+> Modification de la variable `IP` du fichier `.env` pour indiquer l’adresse IP de la machine
 >
 > Exécution du script :
 >
@@ -99,7 +100,7 @@ L’installation de Nginx sera faite à l’aide d’un outil permettant de simp
 >    - 80
 >  restart: always
 >  environment:
->    VIRTUAL_PORT: <port_container> #Remplacer par le port de l'application dans le container 
+>    VIRTUAL_PORT: <port_container> #Remplacer par le port de l'application du container 
 >    VIRTUAL_HOST: <host> #Remplacer par le/les nom de domaine souhaité
 >    LETSENCRYPT_HOST: <host> #Remplacer par le/les nom de domaine souhaité
 >    LETSENCRYPT_EMAIL: <email> #Remplacer par l'email utilisée par letsencrypt
@@ -132,7 +133,7 @@ API permettant à portainer d'analyser l'environnement docker présent sur le se
 
 #### Portainer CE
 
-Interface graphique pour exploiter les informations mise à dispositon par l'API portainer agent mais aussi d'effectuer des actions sur l'environnement docker en place.
+Interface graphique pour exploiter les informations misent à disposition par l'API portainer agent mais aussi d'effectuer des actions sur l'environnement docker en place.
 
 > **Installation :**
 >
@@ -261,7 +262,12 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 >
 > ``` shell
 > wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-> sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+> ```
+> ``` shell
+> sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > \
+> /etc/apt/sources.list.d/jenkins.list'
+> ```
+> ``` shell
 > sudo apt update
 > ```
 >
