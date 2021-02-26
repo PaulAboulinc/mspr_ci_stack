@@ -1,3 +1,4 @@
+
 # MSPR - Mise en oeuvre d'une intégration continue
 
 ## Configuration du serveur
@@ -315,10 +316,7 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 >
 >   * Cliquez sur “installer sans redémarrer”
 >
->     
->
 >  * Configuraton du Github Hook :
->
 >    * Sur Jenkins
 >      * Aller sur "Dashboard > Administrer Jenkins > Configurer le système > Onglet Github"
 >      * Cliquez sur "Avancé..." et cochez l'option "Specify another hook URL for GitHub configuration"
@@ -326,6 +324,41 @@ Jenkins est l'outil qui nous permettra de gérer notre intégration continue ain
 >    * Sur Github :
 >      * Aller sur "Settings > Webhook > add webhook > cliquez sur add webhook"
 >      * Copier le lien "http://jenkins.nonstopintegration.ml:8080/github-webhook/" dans le champ "Payload URL"
+>      
+> * Configuration de SonarQube : 
+> 
+>   * Configurer le serveur SonarQube : 
+>     * Aller sur   "Dashboard > Administrer Jenkins > Configurer le système > Onglet SonarQube servers"
+>     * Cliquer sur "Ajouter une installation SonarQube"
+>     * Indiquer le nom : SonarQube 
+>     * Indiquer URL du serveur : 
+>     * Indiquer Server authentication token : Ajouter le token récupéré sur sonarqube (token a créer dans "My account > Security > Token")
+>     
+>   * Confirgurer SonarQube Scanner
+>     * Aller sur   "Dashboard > Administrer Jenkins > Configuration globale des outils > Onglet SonarQube Scanner"
+>     * Indiquer le nom : SonarScanner
+>     * Cocher "Install automatically"
+>     * Cliquer sur "Ajouter un installateur"
+>     * Sélectionner "SonarQube Scanner 4.6.0.2311"
+>
+> * Configuration des emails :
+>    * Aller sur "Dashboard > Administrer Jenkins > Configurer le système > Onglet Jenkins Location"
+>      * Remplir le champ "Adresse email de l'administrateur système", exemple : `NonStopIntegration <nonstopintegration@gmail.com>`
+>    * Aller sur "Dashboard > Administrer Jenkins > Configurer le système > Onglet Extended E-mail Notification"
+>      * SMTP server : smtp.gmail.com
+>      * SMTP Port	: 465
+>      * SMTP Username : nonstopintegration@gmail.com
+>      * SMTP Password : Renseigner les logins
+>      * Cocher "Use SSL"
+>      * Default user e-mail suffix : @gmail.com
+>    * Aller sur "Dashboard > Administrer Jenkins > Configurer le système > Onglet Notification par email"
+>      * Serveur SMTP : smtp.gmail.com
+>      * Suffixe par défaut des emails des utilisateurs : @gmail.com
+>      * Cocher "Use SMTP Authentication"
+>      * Nom d'utilisateur : nonstopintegration@gmail.com
+>      * Mot de passe : Renseigner les logins
+>      * Cocher "Use SSL"
+>      * Port SMTP	: 465
 >
 > Jenkins est maintenant installé et configuré, il ne reste qu'à se connecter sur l'url suivante : `http://jenkins.nonstopintegration.ml:8080`
 >
